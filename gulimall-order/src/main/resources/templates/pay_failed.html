@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>订单支付页</title>
+    <link rel="stylesheet" href="/static/order/pay/css/style.css">
+    <script src="/static/order/pay/js/jquery-3.1.1.min.js" charset="utf-8"></script>
+</head>
+<body>
+<div class="One_Jdbox">
+    <div class="Jdbox_head">
+        <img src="/static/order/pay/img/logo1.jpg" alt=""><span class="bank">收银台</span>
+    </div>
+    <div class="Jdbox_BuySuc">
+        <dl>
+            <dt><img src="/static/order/pay/img/saoyisao.png" alt=""></dt>
+            <dd>
+                <span>订单交易失败，请重新付款！</span>
+                <span>扫码支付请您在<font>1分钟</font>内完成支付，否则订单会被自动取消(库存紧订单请参见详情页时限)</span>
+                <span>订单详细</span>
+            </dd>
+        </dl>
+    </div>
+    <div class="Jd_foots">
+        <p>
+            <span>Copyright @2004-2017 谷粒学院gulimall.com 版权所有</span>
+            <span>
+            <img src="/static/order/pay/img/foots.png" alt="">
+          </span>
+        </p>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    //头部订单成功 订单详细鼠标移入效果
+    $(".Jdbox_BuySuc dl dd:last-child span:last-child").mouseover(function () {
+        $(this).css({"cursor": "pointer", "color": "#E31613"})
+    }).mouseout(function () {
+        $(this).css("color", "#7EA4FF")
+    })
+    //分期付款鼠标移入hover效果
+    $(".Jd_Fenqi>ol li:not(:first-child)").mouseover(function () {
+        $(this).css({"cursor": "pointer", "border": "1px solid #E31613"})
+    }).mouseout(function () {
+        $(this).css("border", "1px solid #C9DFFF")
+    })
+    //支付方式按钮选择hover效果
+    $(".Jd_main ul li:nth-child(3) button").mouseover(function () {
+        $(this).css({"cursor": "pointer", "color": "#E31613"})
+    }).mouseout(function () {
+        $(this).css("color", "#67A4FF")
+    })
+    //忘记密码鼠标移入效果
+    $(".Jd_main ul li:nth-child(4) span").mouseover(function () {
+        $(this).css({"cursor": "pointer", "color": "#E31613"})
+    }).mouseout(function () {
+        $(this).css("color", "#67A4FF")
+    })
+    //立即支付按钮效果
+    $(".Jd_main ul li:nth-child(5) button").mouseover(function () {
+        $(this).css({"cursor": "pointer", "background": "#FF5350"})
+    }).mouseout(function () {
+        $(this).css("background", "#FC6E6C")
+    })
+
+    $(".Jd_footer ul li").mouseover(function () {
+        $(this).css({"cursor": "pointer", "color": "#E31613"})
+    }).mouseout(function () {
+        $(this).css("color", "#5E5E5E")
+    })
+
+    $(".Jdbox_head>ul li span").mouseover(function () {
+        $(this).css({"cursor": "pointer", "color": "#E31613"})
+    }).mouseout(function () {
+        $(this).css("color", "#666666")
+    })
+    $(".Jdbox_head>ul li:not(:first-child)").mouseover(function () {
+        $(this).css({"cursor": "pointer", "color": "#E31613"})
+    }).mouseout(function () {
+        $(this).css("color", "#666666")
+    })
+
+
+    $(".Jd_Fenqi ul li:first-child").mouseover(function () {
+        $(this).css({"cursor": "pointer", "color": "#666666"})
+    }).mouseout(function () {
+        $(this).css({"color": "black"})
+    })
+</script>
+</html>

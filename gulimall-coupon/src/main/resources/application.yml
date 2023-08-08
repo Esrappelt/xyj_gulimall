@@ -1,0 +1,27 @@
+server:
+  port: 7007
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.28.101:3306/gulimall_sms?useSSL=false&&autoConnect=true&serverTimezone=GMT%2B8
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.28.101:8848
+      config:
+        server-addr: 192.168.28.101:8848
+  application:
+    name: gulimall-coupon
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+logging:
+  level:
+    com.xyj.gulimall: debug

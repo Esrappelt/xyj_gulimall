@@ -1,0 +1,35 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: gulimall-seckill
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.28.101:8848
+    sentinel:
+      transport:
+        dashboard: 192.168.28.101:8888
+        port: 8719
+  redis:
+    host: 192.168.28.101
+    port: 6379
+  rabbitmq:
+    host: 192.168.28.101
+    port: 5672
+    virtual-host: /
+  session:
+    store-type: redis
+  mvc:
+    date-format: yyyy-MM-dd HH:mm:ss
+  # 异步任务的线程池配置
+  task:
+    execution:
+      pool:
+        max-size: 50
+        core-size: 20
+  thymeleaf:
+    cache: false

@@ -1,0 +1,50 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.28.101:8848
+    sentinel:
+      transport:
+        dashboard: 192.168.28.101:8888
+        port: 8719
+  application:
+    name: gulimall-product
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    # useSSL=false防止jdk版本出错
+    url: jdbc:mysql://192.168.28.101:3306/gulimall_pms?useSSL=false
+  thymeleaf:
+    cache: false
+  mvc:
+    static-path-pattern: /static/**
+  redis:
+    host: 192.168.28.101
+    port: 6379
+  cache:
+    type: redis
+    redis:
+      key-prefix: CACHE_
+      cache-null-values: true # 简单解决缓存穿透问题
+  session:
+    store-type: redis
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+      # 设置逻辑删除  即没有真正的删除
+      logic-delete-value: 0 #删除为0
+      logic-not-delete-value: 1 # 未删除为1
+server:
+  port: 10000
+logging:
+  level:
+    com.xyj.gulimall: info
+feign:
+  sentinel:
+    enabled: true

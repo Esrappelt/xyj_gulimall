@@ -1,0 +1,16 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: gulimall-third-party
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.28.101:8848
+        namespace: third-party
+        group: dev
+        file-extension: yml
+        ext-config[0]:
+          data-id: oss.yml
+          group: dev
+          refresh: true

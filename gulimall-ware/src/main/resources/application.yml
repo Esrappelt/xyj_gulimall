@@ -1,0 +1,33 @@
+server:
+  port: 11000
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.28.101:8848
+  application:
+    name: gulimall-ware
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.28.101:3306/gulimall_wms?useSSL=false
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  rabbitmq:
+    host: 192.168.28.101
+    port: 5672
+    virtual-host: /
+    listener:
+      simple:
+        acknowledge-mode: manual
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+logging:
+  level:
+    com.xyj.gulimall: debug
+#  http://localhost:88/api/ware/purchase/received
